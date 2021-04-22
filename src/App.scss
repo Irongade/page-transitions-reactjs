@@ -9,6 +9,13 @@ $black: #1e1f13;
     sans-serif;
   font-weight: 900;
 }
+html {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
 body {
   padding: 0;
@@ -235,7 +242,7 @@ main {
               background-size: cover;
               position: absolute;
               width: 100%;
-              margin-top: -600px;
+              // margin-top: -600px;
               overflow: hidden;
             }
           }
@@ -246,16 +253,26 @@ main {
         bottom: 200px;
         left: 200px;
         z-index: 20;
+        @media (max-width: 1440px) {
+          bottom: 100px;
+          left: 100px;
+        }
         .icon {
           svg {
             height: auto;
             width: 28px;
+            @media (max-width: 1440px) {
+              width: 22px;
+            }
           }
         }
         .text {
           margin-top: 8px;
           color: $white;
           text-transform: uppercase;
+          @media (max-width: 1440px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -265,19 +282,27 @@ main {
 .detailed-information {
   margin-top: 200px;
   height: 600px;
+  @media (max-width: 1440px) {
+    margin-top: 100px;
+    height: 300px;
+  }
   .container {
     .row {
       justify-content: space-between;
       align-items: flex-start;
       h2 {
-        font-size: 28px;
+        font-size: 35px;
       }
       p {
         font-family: "Helvetica Neue";
-        font-size: 16;
+        font-size: 16px;
         line-height: 28px;
         font-weight: 400;
         width: 800px;
+
+        @media (max-width: 1440px) {
+          font-size: 15px;
+        }
       }
     }
   }
